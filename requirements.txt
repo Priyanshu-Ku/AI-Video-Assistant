@@ -1,0 +1,55 @@
+# ─────────────────────────────────────────────
+# AI Meeting Assistant — Python Dependencies
+# ─────────────────────────────────────────────
+
+# ── Audio Acquisition ─────────────────────────
+yt-dlp>=2024.11.4               # Download audio from YouTube URLs
+pydub>=0.25.1                   # Audio file manipulation / format conversion
+ffmpeg-python>=0.2.0            # FFmpeg bindings (ffmpeg binary required separately)
+
+# ── Transcription — Local Whisper ─────────────
+openai-whisper>=20231117        # Local Whisper ASR model
+torch>=2.2.0                    # PyTorch backend for Whisper
+torchaudio>=2.2.0               # Audio tensor utilities used by Whisper
+numpy>=1.26.0,<2.0.0            # Numerical ops (Whisper / PyTorch dependency)
+
+# ── Hindi → English Translation ───────────────
+deep-translator>=1.11.4         # Lightweight translation wrapper (Google Translate backend)
+# -- OR use a local Helsinki-NLP model via transformers:
+# transformers>=4.40.0
+# sentencepiece>=0.2.0
+
+# ── LLM Orchestration — LangChain LCEL ────────
+langchain>=0.2.0                # Core LangChain framework & LCEL primitives
+langchain-core>=0.2.0           # Runnable / LCEL base classes
+langchain-community>=0.2.0      # Community integrations (Mistral, ChromaDB loaders, etc.)
+langchain-mistralai>=0.1.0      # Official LangChain ↔ Mistral AI integration
+mistralai>=0.4.0                # Mistral AI Python client (free API tier)
+
+# ── RAG Pipeline ──────────────────────────────
+chromadb>=0.5.0                 # Local vector store for transcript embeddings
+langchain-chroma>=0.1.0         # LangChain ↔ ChromaDB integration
+sentence-transformers>=2.7.0    # HuggingFace embedding models (e.g. all-MiniLM-L6-v2)
+transformers>=4.40.0            # HuggingFace Transformers (model loading)
+huggingface-hub>=0.23.0         # Model/tokeniser downloads from HF Hub
+tokenizers>=0.19.0              # Fast tokenisers (Transformers dependency)
+
+# ── PDF / TXT Export ──────────────────────────
+fpdf2>=2.7.9                    # Pure-Python PDF generation
+reportlab>=4.1.0                # Alternative PDF engine with richer layout support
+
+# ── Streamlit UI ──────────────────────────────
+streamlit>=1.35.0               # Web UI framework
+streamlit-extras>=0.4.3         # Additional Streamlit UI components
+watchdog>=4.0.0                 # File-system watcher (Streamlit hot-reload)
+
+# ── File Handling & Utilities ─────────────────
+python-dotenv>=1.0.1            # Load API keys from .env file
+requests>=2.32.0                # HTTP client
+tqdm>=4.66.0                    # Progress bars (Whisper downloads, batch processing)
+pathlib2>=2.3.7                 # Path utilities (stdlib backport, optional)
+# tempfile-manager>=0.1.0         # Temp file lifecycle helpers
+
+# ── Optional — Accelerated Inference ──────────
+# accelerate>=0.30.0            # HuggingFace Accelerate (GPU / multi-device support)
+# bitsandbytes>=0.43.0          # 4-bit / 8-bit quantisation for large models
