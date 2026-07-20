@@ -8,7 +8,7 @@ from langchain_core.runnables import RunnablePassthrough, RunnableLambda
 import os
 
 def get_llm():
-    return ChatMistralAI(model = "mistral-small-latest",MISTRAL_API_KEY = os.getenv("MISTRAL_API_KEY"),temperature=0.2)
+    return ChatMistralAI(model = "mistral-small-latest",mistral_api_key = os.getenv("MISTRAL_API_KEY"),temperature=0.2)
 
 def build_chain(system_prompt:str):
     llm = get_llm()

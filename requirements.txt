@@ -53,3 +53,5 @@ pathlib2>=2.3.7                 # Path utilities (stdlib backport, optional)
 # ── Optional — Accelerated Inference ──────────
 # accelerate>=0.30.0            # HuggingFace Accelerate (GPU / multi-device support)
 # bitsandbytes>=0.43.0          # 4-bit / 8-bit quantisation for large models
+
+protobuf==3.20.0
