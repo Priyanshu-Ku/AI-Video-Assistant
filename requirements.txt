@@ -3,7 +3,8 @@
 # ─────────────────────────────────────────────
 
 # ── Audio Acquisition ─────────────────────────
-yt-dlp>=2024.11.4               # Download audio from YouTube URLs
+# yt-dlp>=2024.11.4               
+yt-dlp @ git+https://github.com/yt-dlp/yt-dlp.git # Download audio from YouTube URLs
 pydub>=0.25.1                   # Audio file manipulation / format conversion
 ffmpeg-python>=0.2.0            # FFmpeg bindings (ffmpeg binary required separately)
 
